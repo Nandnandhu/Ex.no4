@@ -46,9 +46,11 @@ public class MainActivity extends Activity
         /** Defining click listener event for the button btn_save
         * of the layout activity_main
         * */
-        OnClickListener saveClickListener = new OnClickListener() {
+        OnClickListener saveClickListener = new OnClickListener()
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 File file = new File(etPath.getText().toString());
                 FileWriter writer=null;
                 try {
@@ -71,7 +73,8 @@ public class MainActivity extends Activity
  
                     Toast.makeText(getBaseContext(), "Successfully saved", Toast.LENGTH_SHORT).show();
  
-                } catch (IOException e) {
+                } catch (IOException e) 
+                {
                     e.printStackTrace();
                 }
             }
@@ -80,9 +83,11 @@ public class MainActivity extends Activity
         /** Defining click listener event for the button btn_save
         * of the layout activity_main
         * */
-        OnClickListener readClickListener = new OnClickListener() {
+        OnClickListener readClickListener = new OnClickListener() 
+        {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) 
+            {
                 File file = new File(etPath.getText().toString());
  
                 String strLine="";
@@ -93,13 +98,15 @@ public class MainActivity extends Activity
                     BufferedReader bReader = new BufferedReader(fReader);
  
                     /** Reading the contents of the file , line by line */
-                    while( (strLine=bReader.readLine()) != null  ){
+                    while( (strLine=bReader.readLine()) != null  )
+                    {
                         text.append(strLine+"\n");
                     }
  
                     Toast.makeText(getBaseContext(), "Successfully loaded", Toast.LENGTH_SHORT).show();
  
-                } catch (IOException e) {
+                } catch (IOException e)
+                {
                     e.printStackTrace();
                 }
  
@@ -121,7 +128,8 @@ public class MainActivity extends Activity
     }
  
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu) 
+    {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
    }
